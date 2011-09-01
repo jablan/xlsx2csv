@@ -132,7 +132,7 @@ class Workbook:
         appName = workbookDoc.firstChild.getElementsByTagName("fileVersion")[0]._attrs['appName'].value
         
         sheets = workbookDoc.firstChild.getElementsByTagName("sheets")[0]
-        for sheetNode in sheets.childNodes:
+        for sheetNode in sheets.getElementsByTagName("sheet"):
             attrs = sheetNode._attrs
             name = attrs["name"].value
             if appName == 'xl':
